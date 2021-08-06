@@ -10,7 +10,7 @@ export const useAdv = (paging) => {
     fetchAdv(page)
     .then(setAdventurers)
     .finally(() => setLoading(false));
-  }, [pagin]);
+  }, [paging]);
 
   return { adventurers, loading };
 };
