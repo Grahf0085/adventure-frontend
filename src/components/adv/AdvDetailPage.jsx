@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { advDetails } from '../../state/adv';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { updateAdv } from '../../services/listAPI'
+import { updateAdv } from '../../services/listAPI';
 
 const AdvDetailPage = () => {
 
@@ -17,13 +17,13 @@ const AdvDetailPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const obj = {
-      id: id,
-      title: title,
-    }
-    updateAdv(obj)
-    setTimeout(function() {
-      window.location.href=`/adv/${obj.id}`;}, 1000)
-  }
+      id,
+      title,
+    };
+    updateAdv(obj);
+    setTimeout(() => {
+      window.location.href = `/adv/${obj.id}`;}, 1000);
+  };
 
   return (
     <section>
@@ -45,6 +45,6 @@ const AdvDetailPage = () => {
       </form>
     </section>
   );
-}
+};
 
-export default AdvDetailPage
+export default AdvDetailPage;
