@@ -1,16 +1,35 @@
 import { useEffect, useState } from "react";
-import { fetchAdv } from '../services/listAPI';
+import { fetchAllAdv, fetchOneAdv } from '../services/listAPI';
 
-export const useAdv = (paging) => {
+export const advDetails = (id) => {
   
   const [loading, setLoading] = useState(true);
-  const[adventurers, setAdventurers] = useState([]);
+  const [details, setAdvDetails] = useState(null);
 
   useEffect(() => {
-    fetchAdv(page)
+    fetchOneAdv(id)
+    .then(setAdvDetails)
+    .finally(() => setLoading(false));
+  }, [id]);
+
+  return { details, loading };
+};
+
+export const listAdv = (page) => {
+  
+  const [loading, setLoading] = useState(true);
+  const [adventurers, setAdventurers] = useState([]);
+
+  useEffect(() => {
+    fetchAllAdv(page)
     .then(setAdventurers)
     .finally(() => setLoading(false));
-  }, [paging]);
+  }, [page]);
 
   return { adventurers, loading };
 };
+
+export const removeAdv = (id) => {
+
+}
+

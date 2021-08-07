@@ -5,6 +5,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import AdvList from '../adv/AdvList';
+import AdvCreate from '../adv/AdvCreate';
 import AdvDetailPage from '../adv/AdvDetailPage';
 import Header from '../Header';
 
@@ -14,7 +15,9 @@ export default function App() {
     <Header />
     <Switch>
       <Route exact path="/" component={AdvList} />
-      <Route exact path="/:id" component={AdvDetailPage} />
+      <Route exact path="/create" component={AdvCreate} />
+      <Route exact path="/adv/:id" component={AdvDetailPage} />
+      <Redirect to="/" />
     </Switch>
     </>
   );
