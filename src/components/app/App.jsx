@@ -12,13 +12,13 @@ import Header from '../Header';
 export default function App() {
   return (
     <>
-    <Header />
-    <Switch>
-      <Route exact path="/" component={AdvList} />
-      <Route exact path="/create" component={AdvCreate} />
-      <Route exact path="/adv/:id" component={AdvDetailPage} />
-      <Redirect to="/" />
-    </Switch>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={AdvList} />
+        <Route exact path="/create" component={AdvCreate} />
+        <Route exact path="/adv/:id" component={AdvDetailPage} />
+        <Redirect to="/" />
+      </Switch>
     </>
   );
 }

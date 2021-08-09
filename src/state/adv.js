@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import { fetchAllAdv, fetchOneAdv } from '../services/listAPI';
 
 export const advDetails = (id) => {
@@ -8,8 +8,8 @@ export const advDetails = (id) => {
 
   useEffect(() => {
     fetchOneAdv(id)
-    .then(setAdvDetails)
-    .finally(() => setLoading(false));
+      .then(setAdvDetails)
+      .finally(() => setLoading(false));
   }, [id]);
 
   return { details, loading };
@@ -22,14 +22,10 @@ export const listAdv = (page) => {
 
   useEffect(() => {
     fetchAllAdv(page)
-    .then(setAdventurers)
-    .finally(() => setLoading(false));
+      .then(setAdventurers)
+      .finally(() => setLoading(false));
   }, [page]);
 
   return { adventurers, loading };
 };
-
-export const removeAdv = (id) => {
-
-}
 
